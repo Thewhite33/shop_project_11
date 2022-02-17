@@ -1,42 +1,93 @@
-'''A simple shop dictionary to add items,quantity,price. Then when a customer comes to shop shopkeeper writes his name
-enters what he wants to buy, quantity and price of his item and when he buys item then delete the items what he buys
-from the shop and also genarates a bill what he buys.'''
-print("Welcome to pyshop")
 item=[]
+company=[]
+price=[]
 quantity=[]
-price=[]    
-shop_dict={"Item":item,"Quantity":quantity,"Price":price} 
-choice = 1 
-while choice!=0:  
-    print("Choose from the below options:")
-    print("1.Add inventory")
-    print("2.Display directory")
-    print("3.Customer came for buying")
-    print("4.Quit")
+item1=[]
+company1=[]
+price1=[]
+quantity1=[]
 
-    choice = int(input("Enter choice in form of serial number"))
+shop_dict={"ITEM":item,"COMPANY":company,"PRICE":price,"QUANTITY":quantity}
+
+choice=1
+while choice!=0:
+    print("1. Add Inventory ")
+    print("2. Display inventory ")
+    print("3. Customer came for buying ")
+    print("4. Show customer's orders")
+    print("Press ENTER to EXIT")
+    choice=int(input("Enter your choice : "))
     if choice==1:
-        i1=input("Enter Name of item")
-        item.append(i1)
-        q1=input("Enter quantity for the item added")
-        quantity.append(q1)
-        p1=input("Enter price of single item")
-        shop_dict["Item"]=i1
-        shop_dict["Quantity"]=q1
-        shop_dict["Price"]=p1
-        shop_dict["Total price"]=q1*p1
+        i=(input("Enter the item name: "))
+        item.append(i)
+        name=input("Enter the company name: ")
+        company.append(name)
+        p=int(input("Enter price: "))
+        price.append(p)
+        q=input("Enter quantity: ")
+        quantity.append(q)
+        shop_dict["COMPANY"]=company
+        shop_dict["PRICE"]=price
+        shop_dict["QUANTITY"]=quantity
     elif choice==2:
-       print("---------------------------------------PYSHOP-------------------------")
-       print("-----------------------------------------------------------------------")
-       print("Item","%15s"%"Quantity","%20s"%"Price","%20s"%"Total Price")
-       a=shop_dict["Item"]
-       print(a)
-       b=shop_dict["Quantity"]
-       print(b)
-       c=shop_dict["Price"]
-       print(c)
-       print("----------------------------------------------------------------------")
+        print("---------------------------------------PYSHOP-------------------------")
+        print("-----------------------------------------------------------------------")
+        print("ITEM","%15s"%"COMPANY","%20s"%"PRICE","%20s"%"QUANTITY")   
+        i=shop_dict["ITEM"]
+        n=shop_dict["COMPANY"]
+        p=shop_dict["PRICE"]
+        a=shop_dict["QUANTITY"]
+        print("----------------------------------------------------------------------")
         
-       for j in range(len(n)):
-          print("%5s"%i[j],"%15s"%n[j],"%20s"%p[j],"%20s"%a[j])
-          print("-------------------------------------------------------------------")  
+        for j in range(len(n)):
+            print("%5s"%i[j],"%15s"%n[j],"%20s"%p[j],"%20s"%a[j])
+            print("-------------------------------------------------------------------")
+
+    elif choice==3:
+          item1=[]
+          company1=[]
+          price1=[]
+          quantity1=[]
+          libary_dict={"ITEM":item1,"COMPANY":company1,"PRICE":price1,"QUANTITY":quantity1}
+          t=int(input("Enter the number of elements customer wants to buy: "))
+          for k in range(t):
+               i1=input("Enter the item customer wants to buy: ")
+               item1.append(i1)
+               c1=input("Enter the company name: ")
+               company1.append(c1)
+               p1=int(input("Enter price: "))
+               price1.append(p1)
+               q1=int(input("Enter the quantity: "))
+               quantity1.append(q1)
+                           
+
+    elif choice==4:
+        shop_dict["COMPANY"]=company1
+        shop_dict["PRICE"]=price1
+        shop_dict["QUANTITY"]=quantity1
+        print("---------------------------------------CUSTOMER'S RECORD-------------------------")
+        print("-----------------------------------------------------------------------")
+        print("ITEM","%15s"%"COMPANY","%20s"%"PRICE","%20s"%"QUANTITY")   
+        a=shop_dict["ITEM"]
+        b=shop_dict["COMPANY"]
+        c=shop_dict["PRICE"]
+        d=shop_dict["QUANTITY"]
+        print("----------------------------------------------------------------------")
+        
+        for j in range(len(b)):
+
+            print("%5s"%a[j],"%15s"%b[j],"%20s"%c[j],"%20s"%d[j])
+            print("-------------------------------------------------------------------")
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
